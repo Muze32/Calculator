@@ -14,7 +14,7 @@ const multiply = function(a, b) {
   return a * b;
 };
 
-const operate = function (a, b, operator) {
+const operate = function (a, operator, b) {
     switch(operator) {
         case '+':
             return add(a, b);
@@ -36,7 +36,29 @@ let operator = prompt('Please enter the operator: ');
 console.log(operate(num1, num2, operator))
 */
 const calculator = document.querySelector('.calculator');
+const display = document.querySelector('.display');
+let operation = '';
 console.log(calculator);
+
 calculator.addEventListener('click', e => {
-    console.log(e.target.textContent);
+    if (e.target.tagName == 'BUTTON') { //Check if the elment clicked is a button
+        operation = display.textContent;
+        switch(e.target.className) {
+            case 'operator':
+                display.textContent += ` ${e.target.textContent} `;
+                break;
+            case 'equal': 
+                console.log(operation);
+                operation = operation.split(' ');
+                display.textContent = operate(operation[0], operation[1], operation[2])
+                break;
+            case 'clear':
+                display.textContent = '';
+                break;
+            default:
+                display.textContent += `${e.target.textContent}`
+                break;  
+            }
+    }
+
 })
