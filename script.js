@@ -14,15 +14,24 @@ const multiply = function(a, b) {
   return a * b;
 };
 
-const operate = function (operator, a, b) {
+const operate = function (a, b, operator) {
     switch(operator) {
         case '+':
             return add(a, b);
         case '-':
-            subtract(a ,b)
-            break;
+            return subtract(a, b);
+        case '/':
+            return divide(a, b);
+        case '*':
+            return multiply(a, b);
+        default:
+            alert('Please enter a valid operator');
     }
 }
+/*
+let num1 = parseInt(prompt('Please enter a number: '));
+let num2 = parseInt(prompt('Please enter another number: '));
+let operator = prompt('Please enter the operator: ');
 
-let num1 = parseInt(prompt('Please enter a number: '))
-let num1 = parseInt(prompt('Please enter another number: '))
+console.log(operate(num1, num2, operator))
+*/
