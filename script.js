@@ -1,48 +1,58 @@
-const add = function(a, b = 0) {
+const add = function(a, b) {
 	return a + b;
 };
 
-const subtract = function(a, b = 0) {
+const subtract = function(a, b) {
 	return a - b;
 };
 
-const divide = function(a ,b = 1) {
+const divide = function(a, b) {
+    if (b == 0) {
+        return 'lmao'
+    }
 	return a / b;
 };
 
-const multiply = function(a, b = 1) {
-  return a * b;
+const multiply = function(a, b) {
+    return a * b;
 };
 
 const operate = function (a, operator, b) {
-    a = parseInt(a);
-    b = parseInt(b);
+    a = parseFloat(a);
+    b = parseFloat(b);
+
     switch(operator) {
         case '+':
-            return add(a, b);
+            result = add(a, b);
+            break;
+
         case '-':
-            return subtract(a, b);
+            result = subtract(a, b);
+            break;
+
         case '/':
-            return divide(a, b);
+            if (b == 0) {
+                return 'lmao';
+            }
+
+            result = divide(a, b);
+            break;
+
         case '*':
-            return multiply(a, b);
+            result = multiply(a, b);
+            break;
     }
+
+    return Math.round(result * 100) / 100;
 }
 
 const calculator = document.querySelector('.calculator');
 const display = document.querySelector('.display');
 let operation = '';
-let equalPressed = true;
 let result = 0;
 
 calculator.addEventListener('click', e => {
     if (e.target.tagName == 'BUTTON') { //Check if the elment clicked is a button
-
-        if (equalPressed) {  //If equal have been pressed deletes display value
-            equalPressed = false;
-            display.textContent = '';
-            
-        }
 
         switch(e.target.className) {
             case 'operator':
@@ -57,9 +67,11 @@ calculator.addEventListener('click', e => {
             case 'equal': 
                 console.log(operation);
                 operation = operation.split(' ');
-                result = operate(operation[0], operation[1], operation[2])
+                result = operate(operation[0], operation[1], operation[2]);
+                if (isNaN(result)) {
+                    break;
+                }
                 display.textContent = result;
-                equalPressed = true;
                 break;
 
             case 'clear':
