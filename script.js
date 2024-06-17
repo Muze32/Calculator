@@ -35,3 +35,8 @@ let operator = prompt('Please enter the operator: ');
 
 console.log(operate(num1, num2, operator))
 */
+const calculator = document.querySelector('.calculator');
+console.log(calculator);
+calculator.addEventListener('click', e => {
+    console.log(e.target.textContent);
+})
