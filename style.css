@@ -1,0 +1,34 @@
+body {
+    background-color: black;
+}
+
+body, html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.calculator {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%; /* Ajusta el ancho según sea necesario */
+    max-width: 400px; /* Máximo ancho del contenedor */
+    padding: 20px;
+    background-color: blue;
+    flex-direction: column;
+}
+
+.bottom-row {
+    display: flex;
+    justify-content: space-between;
+}
+
+button {
+    height: 65px;
+    width: 65px;
+    margin: 0 0 5px 5px;
+    border-radius: 10%;
+}
