@@ -78,11 +78,16 @@ calculator.addEventListener('click', e => {
             case 'clear':
                 display.textContent = '';
                 break;
+
             case "floating":
                 if (floatingEnabled) { //Checks if the floating button has already been pressed
                     display.textContent += `${e.target.textContent}`
                     floatingEnabled = false;    
                 }
+                break;
+                
+            case 'backspace':
+                display.textContent = display.textContent.slice(0, -1);
                 break;
 
             default:
