@@ -2,23 +2,33 @@ body {
     background-color: black;
 }
 
-body, html {
-    height: 100%;
-    margin: 0;
+html, body {
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 100%;
 }
 
 .calculator {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%; /* Ajusta el ancho según sea necesario */
-    max-width: 400px; /* Máximo ancho del contenedor */
     padding: 20px;
     background-color: blue;
-    flex-direction: column;
+    width: 300px; /* Máximo ancho del contenedor */
+}
+
+.display {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    min-height: 75px;
+    background-color: gray;
+    margin-bottom: 10px;
+    font-size: 40px;
+    border-radius: 4%;
+}
+
+.row, .bottom-row {
+    display: flex;
+    gap: 10px;
 }
 
 .bottom-row {
@@ -27,8 +37,11 @@ body, html {
 }
 
 button {
-    height: 65px;
     width: 65px;
-    margin: 0 0 5px 5px;
+    height: 65px;
+    margin-bottom: 10px;
     border-radius: 10%;
+    flex-grow: 1;
+    font-size: 20px;
+    padding: 20px;
 }
