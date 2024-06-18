@@ -11,8 +11,9 @@ html, body {
 
 .calculator {
     padding: 20px;
-    background-color: blue;
+    background-color: #2f2f3f;
     width: 300px; /* Máximo ancho del contenedor */
+    border-radius: 4%;
 }
 
 .display {
@@ -20,10 +21,11 @@ html, body {
     justify-content: flex-end;
     align-items: flex-end;
     min-height: 75px;
-    background-color: gray;
+    background-color: #1c8154;
     margin-bottom: 10px;
     font-size: 40px;
     border-radius: 4%;
+    color: #002566;
 }
 
 .row, .bottom-row {
@@ -36,12 +38,19 @@ html, body {
     justify-content: space-between;
 }
 
+.bottom-row button {
+    background-color: rgb(198, 129, 11);
+    color: black;
+    font-weight: 550;
+}
+
 button {
-    width: 65px;
-    height: 65px;
+    background-color: #111111;
+    color: white;
+    width: 55px;
+    height: 60px;
     margin-bottom: 10px;
     border-radius: 10%;
     flex-grow: 1;
     font-size: 20px;
-    padding: 20px;
 }
