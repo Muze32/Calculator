@@ -10,9 +10,9 @@ html, body {
 }
 
 .calculator {
-    padding: 20px;
+    padding: 25px;
     background-color: #2f2f3f;
-    width: 300px; /* Máximo ancho del contenedor */
+    width: 300px;
     border-radius: 4%;
 }
 
@@ -22,26 +22,28 @@ html, body {
     align-items: flex-end;
     min-height: 75px;
     background-color: #1c8154;
-    margin-bottom: 10px;
+    margin-bottom: 25px;
     font-size: 40px;
     border-radius: 4%;
     color: #002566;
+    padding-right: 5px;
 }
 
-.row, .bottom-row {
+.row {
     display: flex;
     gap: 10px;
 }
 
 .bottom-row {
     display: flex;
-    justify-content: space-between;
+    gap: 20px;
 }
 
 .bottom-row button {
     background-color: rgb(198, 129, 11);
     color: black;
     font-weight: 550;
+    margin-bottom: 0;
 }
 
 button {
@@ -49,8 +51,9 @@ button {
     color: white;
     width: 55px;
     height: 60px;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     border-radius: 10%;
     flex-grow: 1;
-    font-size: 20px;
+    font-size: 22px;
+    border: none;
 }
