@@ -20,10 +20,10 @@ html, body {
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
-    min-height: 75px;
+    min-height: 85px;
     background-color: #1c8154;
-    margin-bottom: 25px;
-    font-size: 40px;
+    margin-bottom: 30px;
+    font-size: 45px;
     border-radius: 4%;
     color: #002566;
     padding-right: 5px;
@@ -45,6 +45,9 @@ html, body {
     font-weight: 550;
     margin-bottom: 0;
 }
+.bottom-row button:hover {
+    background-color: rgb(129 86 13);
+}
 
 button {
     background-color: #111111;
@@ -55,5 +58,10 @@ button {
     border-radius: 10%;
     flex-grow: 1;
     font-size: 22px;
+    transition-duration: 0.4s;
     border: none;
+}
+
+button:hover {
+    background-color: #332f2f;
 }
