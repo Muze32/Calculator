@@ -53,19 +53,22 @@ let equation = '';
 let result = 0;
 let floatingEnabled = true;
 
+
 ////////////Main code
+
 calculator.addEventListener('click', e => {
     if (e.target.tagName == 'BUTTON') { //Check if the elment clicked is a button
         updateDisplayContent(e.target.textContent);
+        e.target.blur();
     }
 })
 
 body.addEventListener('keydown', e => {
-    if (!(isNaN(e.key)) || ('/*+-=.').split('').includes(e.key) || ['Enter', 'Backspace'].includes(e.key)) {
+    if (!(isNaN(e.key)) || ('/, *, +, -, =, ., Enter, Backspace, Escape').split(', ').includes(e.key)) {
         updateDisplayContent(e.key);
     }
 })
-
+    
 
 function updateDisplayContent (event) {
     switch(event) {
@@ -84,6 +87,9 @@ function updateDisplayContent (event) {
         case '=': 
         case 'Enter':
             result = operate(equation[0], equation[1], equation[2]);
+            if (result.toString().includes('.')) {
+                floatingEnabled = false;
+            }
             if (isNaN(result) && result != "lmao") {
                 break;
             }
@@ -91,6 +97,8 @@ function updateDisplayContent (event) {
             break;
 
         case 'AC':
+        case 'Escape':
+            floatingEnabled = true;
             display.textContent = '';
             break;
 
@@ -108,7 +116,6 @@ function updateDisplayContent (event) {
 
         default:
             display.textContent += `${event}`
-            break;  
         }
         equation = display.textContent.split(' ');
 }
